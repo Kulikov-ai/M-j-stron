@@ -1,1 +1,51 @@
-
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Strona - Szablon z Zakładkami</title>
+    <style>
+        body { font-family: Helvetica, sans-serif; margin: 0; padding: 0; background-color: #fff; }
+        header { background-color: #28a745; color: white; padding: 25px; text-align: center; }
+        .tabs { display: flex; justify-content: center; background-color: #f8f9fa; padding: 10px; }
+        .tab-button { padding: 10px 20px; cursor: pointer; border: 1px solid #ddd; margin: 0 5px; background: white; }
+        .tab-button.active { background: #28a745; color: white; }
+        .tab-content { max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; display: none; }
+        .tab-content.active { display: block; }
+        footer { background-color: #28a745; color: white; text-align: center; padding: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Strona z Zakładkami</h1>
+    </header>
+    <div class="tabs">
+        <div class="tab-button active" onclick="openTab('tab1')">Zakładka 1</div>
+        <div class="tab-button" onclick="openTab('tab2')">Zakładka 2</div>
+        <div class="tab-button" onclick="openTab('tab3')">Zakładka 3</div>
+    </div>
+    <div id="tab1" class="tab-content active">
+        <h2>Zakładka 1</h2>
+        <p>Uzupełnij treści tutaj.</p>
+    </div>
+    <div id="tab2" class="tab-content">
+        <h2>Zakładka 2</h2>
+        <p>Dodaj informacje później.</p>
+    </div>
+    <div id="tab3" class="tab-content">
+        <h2>Zakładka 3</h2>
+        <p>Miejsce na więcej treści.</p>
+    </div>
+    <footer>
+        <p>&copy; 2025. Interaktywna Strona.</p>
+    </footer>
+    <script>
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
